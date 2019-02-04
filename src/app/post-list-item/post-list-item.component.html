@@ -1,0 +1,22 @@
+<div [ngClass]="{'row': true}">
+  <h3 [ngClass]="{'col-lg-10': true,
+                  'col-md-10': true,
+                  'col-sm-10': true,
+                  'text-left': true}">
+      {{ post.title }}
+  </h3>
+  <p [ngClass]="{'col-lg-2': true,
+                  'col-md-2': true,
+                  'col-sm-2': true,
+                  'text-right': true,
+                  'text-secondary': true}">
+      <em>{{ post.created_at | date: 'short' }}</em>
+  </p>
+</div>
+<div [ngClass]="{'row': true, 'content': true}">
+  <p [ngClass]="{'text-justify': true}">{{ post.content }}</p>
+</div>
+<div [ngClass]="{'row': true}">
+    <button type="button" [ngClass]="{'btn': true, 'btn-success': true}" (click)="addLovit(post)">Love It!</button>
+    <button type="button" [ngClass]="{'btn': true, 'btn-danger': true, 'ml-2': true}" (click)="removeLovit(post)">Don't Love It!</button>
+</div>
