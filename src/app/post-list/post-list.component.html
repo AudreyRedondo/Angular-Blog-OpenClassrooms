@@ -1,8 +1,10 @@
+<h1>{{ title }}</h1>
 <ul [ngClass]="{'list-group': true}">
-  <app-post-list-item *ngFor="let post of posts"
-                      [post] ="post"
+  <app-post-list-item *ngFor="let post of posts; let i = index"
+                      [post]="post"
                       [ngClass]="{'list-group-item': true,
-                                  'list-group-item-success' : isPositive(post) && !isCount0(post),
-                                  'list-group-item-danger': !isPositive(post) && !isCount0(post)}">
+                                  'list-group-item-success' : isPositive(i) && !isCount0(i),
+                                  'list-group-item-danger': !isPositive(i) && !isCount0(i)}"
+                      [index]="i">
   </app-post-list-item>
 </ul>

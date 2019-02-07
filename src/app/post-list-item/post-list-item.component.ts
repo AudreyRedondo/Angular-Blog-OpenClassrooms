@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Post } from '../post';
+import { Post } from '../models/post.model';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-post-list-item',
@@ -10,18 +11,22 @@ export class PostListItemComponent implements OnInit {
 
   //Transmission du post depuis app-post-list.component
   @Input() post: Post;
+  @Input() index: number;
 
-  constructor() {}
+  constructor(private postService: PostService) {}
 
   ngOnInit() {
   }
 
-  //Méthode pour incrémenter le nombre de lovits
-  addLovit(post :Post): void {
-    post.loveIts++;
+  addLovit(): void {
+    this.postService.addLovit(this.index);
   }
-  //Méthode pour décrémenter le nombre de lovits
-  removeLovit(post: Post): void {
-    post.loveIts--;
+ 
+  removeLovit(): void {
+    this.postService.removeLovit(this.index);
+  }
+  
+  removePost(): void {
+    this.postService.removePost(this.index);
   }
 }

@@ -1,4 +1,17 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 
+.container {
+  margin-top: 50px;
+  width: 1200px;
+}
 
+a{
+  text-decoration: none;
+  margin-right: 10px ;
+  color: grey;
+}
+
+a:hover {
+  color: white;
+}

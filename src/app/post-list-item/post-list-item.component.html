@@ -16,7 +16,10 @@
 <div [ngClass]="{'row': true, 'content': true}">
   <p [ngClass]="{'text-justify': true}">{{ post.content }}</p>
 </div>
-<div [ngClass]="{'row': true}">
-    <button type="button" [ngClass]="{'btn': true, 'btn-success': true}" (click)="addLovit(post)">Love It!</button>
-    <button type="button" [ngClass]="{'btn': true, 'btn-danger': true, 'ml-2': true}" (click)="removeLovit(post)">Don't Love It!</button>
+<div [ngClass]="{'row': true, 'content': true, 'float-left': true}">
+    <button type="button" [ngClass]="{'btn': true, 'btn-success': true}" (click)="addLovit()">Love It!</button>
+    <button type="button" [ngClass]="{'btn': true, 'btn-danger': true, 'ml-2': true}" (click)="removeLovit()">Don't Love It!</button>
+</div>
+<div [ngClass]="{'row': true, 'content': true, 'float-right': true}">
+  <button type="button" [ngClass]="{'btn': true, 'btn-danger': true}" (click)="removePost()">Remove this post</button>
 </div>

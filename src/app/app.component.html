@@ -1,5 +1,16 @@
-<div [ngClass]="{'container': true }">
-  <h1>{{ title }}</h1>
- <app-post-list [posts]="posts"></app-post-list>
-</div>
+<nav [ngClass]="{'navbar': true, 'bg-dark': true, 'navbar-dark': true, 'navbar-expand-lg': true}">
+    <div [ngClass]="{'navbar-collapse': true, 'collapse': true}">
+      <ul [ngClass]="{'nav': true, 'navbar-nav': true}">
+        <li [ngClass]="{'navbar-item': true}" routerLinkActive="active"><a [ngClass]="{'navbar-link': true}" routerLink="posts">Posts</a></li>
+        <li [ngClass]="{'navbar-item': true}" routerLinkActive="active"><a [ngClass]="{'navbar-link': true}" routerLink="new">New Post</a></li>
+      </ul>
+    </div>
+</nav>
 
+<div [ngClass]="{'container': true }">
+  <div [ngClass]="{'row': true}">
+    <div [ngClass]="{'col-xs-12': true}">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
